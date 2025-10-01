@@ -1,49 +1,26 @@
-/* Floating WhatsApp button */
-.wrap {
+/* styles/WhatsAppButton.module.css */
+.whatsapp {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 999;
-  display: grid;
-  place-items: center;
-}
-
-.btn {
-  display: inline-flex;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  background: #25D366;
-  color: #ffffff;
-  padding: 12px 16px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-  transition: transform 120ms ease, box-shadow 160ms ease, background 160ms ease;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2000; /* stays above other elements */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
-  background: #22c15a;
+.whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
 }
 
 .icon {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-}
-
-/* Respect iOS safe area on notched devices */
-@supports (padding: max(0px)) {
-  .wrap {
-    right: max(18px, env(safe-area-inset-right));
-    bottom: max(18px, env(safe-area-inset-bottom));
-  }
-}
-
-/* Compact on very small screens */
-@media (max-width: 400px) {
-  .btn { padding: 10px 14px; font-weight: 600; }
-  .icon { width: 16px; height: 16px; }
+  color: #fff;
+  font-size: 30px;
 }
