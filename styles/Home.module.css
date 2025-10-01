@@ -242,3 +242,70 @@
   color: #555;
   line-height: 1.5;
 }
+
+/* CTA buttons layout */
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center; /* center align horizontally */
+  margin-top: 20px;
+}
+
+.brochureButton {
+  background: #ffffff;
+  border: 2px solid #003087;
+  color: #003087;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.brochureButton:hover {
+  background: #ffd700;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.25);
+}
+
+/* Button container to stack vertically */
+.heroButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* spacing between buttons */
+  margin-top: 20px;
+  align-items: center; /* center them horizontally */
+}
+
+/* Base style for hero button */
+.heroButton {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #003087;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+  text-align: center;
+  min-width: 200px;
+}
+
+.heroButton:hover {
+  background-color: #001f5e;
+  transform: translateY(-2px);
+}
+
+/* Alternate style for brochure button */
+.brochureButton1 {
+  background: transparent;
+  border: 2px solid #003087;
+  color: #003087;
+}
+
+.brochureButton:hover {
+  background: #003087;
+  color: #fff;
+}

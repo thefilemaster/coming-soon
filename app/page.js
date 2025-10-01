@@ -70,9 +70,18 @@ export default function Home() {
             Files, Envelopes, Cards, and More — All Branded for Your Hospital at
             the lowest market prices.
           </p>
-          <a href="/quote" className={styles.quoteButton}>
-            Request a Quote
-          </a>
+          <div className={styles.ctaButtons}>
+            <a href="/quote" className={styles.quoteButton}>
+              Request a Quote
+            </a>
+            <a
+              href="/brochure.pdf"
+              className={styles.brochureButton}
+              download="The-File-Master-Brochure.pdf"
+            >
+              Download Brochure
+            </a>
+          </div>
         </div>
       </section>
 

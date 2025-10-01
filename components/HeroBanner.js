@@ -13,9 +13,22 @@ export default function HeroBanner() {
         <p className={styles.heroSubtitle}>
           Files, Envelopes, Cards, Prescription Pads — Custom Printed & Delivered
         </p>
-        <Link href="/quote" className={styles.heroButton}>
-          Request a Quote
-        </Link>
+
+        <div className={styles.heroButtons}>
+          {/* Quote Button */}
+          <Link href="/quote" className={styles.heroButton}>
+            Request a Quote
+          </Link>
+
+          {/* Download Brochure Button */}
+          <a
+            href="/brochure.pdf"
+            download="The-File-Master-Brochure.pdf"
+            className={`${styles.heroButton} ${styles.brochureButton}`}
+          >
+            Download Brochure
+          </a>
+        </div>
       </div>
     </section>
   );
