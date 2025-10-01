@@ -39,7 +39,7 @@ export default function Footer() {
           <h5 className={styles.colTitle}>Our Products</h5>
           <ul className={styles.linkList}>
             <li><Link href="/products/files">Files</Link></li>
-            <li><Link href="/products/xray-mri">X Rays &amp; MRI Scan Cover</Link></li>
+            <li><Link href="/products/xraysandmriscancovers">X Rays &amp; MRI Scan Cover</Link></li>
             <li><Link href="/products/envelopes">Envelopes</Link></li>
             <li><Link href="/products/visiting-cards">Visiting Cards</Link></li>
             <li><Link href="/products/letterheads">Letter Heads</Link></li>
