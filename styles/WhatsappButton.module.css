@@ -1,0 +1,25 @@
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp:hover {
+  background-color: #128c7e;
+}
+
+.icon {
+  font-size: 28px;
+}

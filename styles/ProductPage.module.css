@@ -1,0 +1,276 @@
+/* Page scaffold */
+.page,
+.container {
+  padding: 28px 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #003087; /* brand blue */
+  margin: 6px 0 18px;
+}
+
+/* Tabs (Paper / Plastic) */
+.tabRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 6px 0 22px;
+}
+
+.tabBtn,
+.tabButton {
+  padding: 10px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0f172a;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease,
+    transform 0.12s ease;
+}
+
+.tabBtn:hover,
+.tabButton:hover {
+  background: #f5f8ff;
+  border-color: #c9d7ff;
+}
+
+.tabActive,
+.activeTab {
+  background: #003087;
+  color: #ffffff;
+  border-color: #003087;
+  box-shadow: 0 6px 16px rgba(0, 48, 135, 0.22);
+  transform: translateY(-1px);
+}
+
+/* Sections */
+.section {
+  margin: 22px 0 12px;
+}
+
+.sectionTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #eef2ff; /* subtle divider */
+}
+
+/* Finish grid */
+.cardGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Option pills */
+.pillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease,
+    color 0.18s ease, transform 0.12s ease;
+}
+
+.pill:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.pillActive {
+  background: #003087;
+  color: #ffffff;
+  border-color: #003087;
+  box-shadow: 0 6px 14px rgba(0, 48, 135, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Helper notes (selected option description) */
+.helperNote {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-left: 3px solid #003087;
+  background: linear-gradient(180deg, #f6f9ff 0%, #f1f6ff 100%);
+  color: #334155;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* CTA */
+.ctaRow {
+  margin-top: 22px;
+}
+
+.ctaBtn {
+  background: #003087;
+  color: #ffffff;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 48, 135, 0.28);
+  background: #012866;
+}
+
+.helperText {
+  margin-top: 10px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+/* Legacy helpers kept for compatibility */
+.tabs { display: contents; }
+.tabContent { display: contents; }
+
+/* Motion safety */
+@media (prefers-reduced-motion: reduce) {
+  .tabBtn,
+  .pill,
+  .ctaBtn {
+    transition: none;
+  }
+}
+
+/* Improve mobile spacing/legibility */
+@media (max-width: 640px) {
+  .page { padding: 22px 14px; }
+  .title { font-size: 1.75rem; margin-bottom: 14px; }
+  .section { margin: 18px 0 10px; }
+  .sectionTitle { font-size: 1.05rem; }
+  .helperNote { font-size: 0.92rem; padding: 10px 12px; }
+  .pill { padding: 10px 14px; font-size: 0.95rem; }
+  .ctaBtn { width: 100%; }
+}
+
+/* Make tap targets comfy on touch */
+.pill, .tabBtn, .ctaBtn {
+  min-height: 42px;
+}
+
+/* Slightly larger grid gap on desktop for visual breathing room */
+@media (min-width: 1024px) {
+  .cardGrid { gap: 18px; }
+}
+
+/* Bottom CTA wrapper (sits just above footer) */
+.ctaBottomWrap {
+  margin-top: 28px;
+  border-top: 1px solid #e5e7eb;
+  padding: 18px 0 10px;
+}
+
+.ctaBottomInner {
+  max-width: 1100px;  /* match your page width */
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Reuse your existing CTA button styles if you added them earlier */
+.primaryBtn {
+  background: #003087;
+  color: #fff;
+  font-weight: 800;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+}
+.primaryBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 48, 135, 0.28);
+  background: #012866;
+}
+
+/* WhatsApp button */
+.waBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #003087;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 800;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+}
+.waBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.28);
+  background: #1ebe5d;
+}
+
+/* Make sure the SVG icon is visible in all cases */
+.waBtn svg,
+.waIcon {
+  display: block;
+}
+
+/* Mobile full-width buttons */
+@media (max-width: 640px) {
+  .ctaBottomInner {
+    gap: 10px;
+  }
+  .primaryBtn,
+  .waBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Helper description line under a choice */
+.helperNote{
+  margin-top:8px;
+  color:#475569;           /* slate-600 */
+  font-size:0.95rem;
+  line-height:1.5;
+}
+
+/* WhatsApp icon box inside the CTA */
+.waBtn svg{
+  width:18px;
+  height:18px;
+  margin-right:8px;
+  flex-shrink:0;
+}

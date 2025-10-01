@@ -1,0 +1,558 @@
+/* =========================
+   THE FILE MASTER - NAVBAR
+   ========================= */
+
+/* ===== Bar (desktop baseline) ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #003087; /* solid blue bar */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* ===== Links row (desktop baseline) ===== */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  position: relative;
+}
+
+.link {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 2px;
+}
+
+/* ===== Dropdown (shared) ===== */
+.dropdownContainer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+}
+
+.dropdownToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 700;
+  background: transparent;
+  border: 0;
+  padding: 8px 4px;
+  width: auto;
+}
+
+.chev {
+  transition: transform 200ms ease;
+}
+
+/* ===== Desktop dropdown panel ===== */
+.dropdownMenu {
+  display: none;                    /* hidden baseline */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px 6px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+  z-index: 1000;
+}
+
+/* Ensure JS toggle always wins (helps on some mobile browsers) */
+.dropdownVisible { display: block !important; }
+
+/* DESKTOP: open on hover (no click needed) */
+@media (min-width: 901px) {
+  .dropdownContainer:hover .dropdownMenu {
+    display: block;
+  }
+  .dropdownContainer:hover .chev {
+    transform: rotate(180deg);
+  }
+}
+
+/* Shared dropdown item styles */
+.dropdownMenu a {
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #0f172a;
+  text-decoration: none;
+  display: block;
+  transition: background 150ms ease, transform 120ms ease;
+}
+.dropdownMenu a:hover { background: #f6f7fb; }
+.dropdownMenu a:active { transform: scale(.98); }
+
+/* ===== CTAs in bar (desktop) ===== */
+.brochureBtn,
+.quoteBtn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 9px 14px;
+  border-radius: 10px;
+  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease, color 140ms ease;
+}
+
+/* Outline white (visible on blue) */
+.brochureBtn {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.brochureBtn:hover {
+  background: #f0a500;
+  color: #111827;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(240,165,0,.25);
+}
+
+/* Filled accent CTA */
+.quoteBtn {
+  background: #f0a500;
+  color: #0b1a3a;
+}
+.quoteBtn:hover {
+  background: #d79400;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(240,165,0,.28);
+}
+
+/* ===== Hamburger (hidden on desktop) ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+.bar {
+  width: 26px;
+  height: 2.5px;
+  background-color: #ffffff; /* white bars on blue */
+  transition: transform 240ms ease, background 240ms ease;
+  border-radius: 999px;
+}
+.barOpen { background-color: #f0a500; }
+
+/* =========================
+   MOBILE / TABLET
+   ========================= */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 16px;
+    top: 18px;
+    z-index: 1100;
+  }
+
+  /* Full-width slide-down panel under the bar */
+  .navLinks {
+    position: fixed;
+    top: 64px;                 /* approx navbar height */
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-height: calc(100vh - 64px);
+    overflow: auto;
+
+    display: none;             /* hidden until hamburger toggles .mobileMenu */
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+
+    background: #003087;       /* solid blue */
+    padding: 16px 14px 20px;   /* tighter side padding for visual alignment */
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 16px 36px rgba(0,0,0,.28);
+    border-top: 1px solid rgba(255,255,255,.15);
+    z-index: 1000;
+  }
+  .mobileMenu { display: flex; }
+
+  .navItem { width: 100%; }
+
+  .link {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 2px;
+  }
+  .chev { color: #ffffff; }
+
+  /* Make trigger row full-width & clearly tappable */
+  .dropdownContainer {
+    width: 100%;
+    display: block;
+  }
+
+  .dropdownToggle {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.10);
+    border: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Rotate chevron when expanded (set by aria-expanded in JS) */
+  .dropdownToggle[aria-expanded="true"] .chev {
+    transform: rotate(180deg);
+  }
+
+  /* MOBILE: list appears directly under the trigger */
+  .dropdownMenu {
+    /* keep the base display:none; toggled by .dropdownVisible above */
+    position: static !important;       /* override desktop absolute */
+    left: auto !important;
+    top: auto !important;
+    min-width: 0 !important;
+    width: 100%;                       /* full width under trigger */
+    margin: 8px 0 0 0;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.08); /* a bit brighter than header for visibility */
+    border: 1px solid rgba(255,255,255,.22);
+    box-shadow: none;
+    max-height: 50vh;                  /* ensure it’s visible/scrollable */
+    overflow: auto;
+  }
+
+  .dropdownMenu a {
+    color: #ffffff;
+    padding: 12px 10px;
+    border-radius: 8px;
+    display: block;
+    font-weight: 600;
+  }
+  .dropdownMenu a:hover {
+    background: rgba(255,255,255,.12);
+  }
+
+  /* Prevent desktop hover from causing "first tap = hover" on touch */
+  @media (hover: none) {
+    .dropdownContainer:hover .dropdownMenu { display: none; }
+  }
+
+  /* Full-width, aligned CTAs */
+  .brochureBtn,
+  .quoteBtn {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 16px;
+    border-radius: 12px;
+    margin-top: 6px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .brochureBtn {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+  }
+  .quoteBtn {
+    background: #f0a500;
+    color: #0b1a3a;
+    border: 0;
+  }
+}
+
+/* =========================
+   MODAL (brochure download)
+   ========================= */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  z-index: 1200;
+  animation: fadeIn 180ms ease;
+}
+
+.modalContent {
+  position: relative;
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  width: min(92vw, 420px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
+  animation: popIn 200ms ease;
+}
+
+.modalClose {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: #f3f4f6;
+  border: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 32px;
+  transition: background 140ms ease, transform 120ms ease;
+}
+.modalClose:hover { background: #e5e7eb; transform: rotate(10deg); }
+
+.modalForm { display: grid; gap: 12px; }
+
+.modalSubmit {
+  background: #003087;
+  color: #ffffff;
+  border: 0;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 160ms ease, transform 120ms ease, box-shadow 160ms ease;
+}
+.modalSubmit:hover {
+  background: #001f5e;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0, 48, 135, 0.22);
+}
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes popIn  { from { opacity: 0; transform: translateY(8px) scale(.98) } to { opacity: 1; transform: translateY(0) scale(1) } }
+
+/* --- Fix CTA clipping at bottom (mobile) --- */
+/* =========================
+   MOBILE / TABLET  (ONLY)
+   ========================= */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 16px;
+    top: 18px;
+    z-index: 1100;
+  }
+
+  /* Slide-down panel */
+  .navLinks {
+    position: fixed;
+    top: 64px;                 /* approx navbar height */
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: calc(100vh - 64px);
+    overflow: auto;
+
+    display: none;             /* hidden until hamburger toggles .mobileMenu */
+    flex-direction: column;
+    align-items: center;       /* center children horizontally */
+    gap: 14px;
+
+    background: #003087;
+    padding: 16px 14px 20px;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 16px 36px rgba(0,0,0,.28);
+    border-top: 1px solid rgba(255,255,255,.15);
+    z-index: 1000;
+
+    /* keep CTAs fully visible at the bottom */
+    padding-bottom: calc(56px + env(safe-area-inset-bottom));
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  }
+  .mobileMenu { display: flex; }
+
+  /* spacer so the last button never gets clipped */
+  .navLinks::after {
+    content: "";
+    display: block;
+    height: calc(40px + env(safe-area-inset-bottom));
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  /* each item sits in a centered “lane” */
+  .navItem {
+    width: 100%;
+    max-width: 560px;          /* soft container width for mobile menu */
+    display: flex;
+    justify-content: center;   /* center the child inside the li */
+  }
+
+  .link {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 2px;
+    display: block;
+    width: 100%;
+  }
+  .chev { color: #ffffff; }
+
+  /* Products trigger row */
+  .dropdownContainer {
+    width: 100%;
+    display: block;
+  }
+
+  .dropdownToggle {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.10);
+    border: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .dropdownToggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+
+  /* Products list right under trigger */
+  .dropdownMenu {
+    /* base display is none; toggled by .dropdownVisible in desktop rules */
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    min-width: 0 !important;
+    width: 100%;
+    margin: 8px 0 0 0;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.22);
+    box-shadow: none;
+    max-height: 50vh;
+    overflow: auto;
+  }
+
+  .dropdownMenu a {
+    color: #ffffff;
+    padding: 12px 10px;
+    border-radius: 8px;
+    display: block;
+    font-weight: 600;
+  }
+  .dropdownMenu a:hover { background: rgba(255,255,255,.12); }
+
+  /* Prevent desktop hover from causing "first tap = hover" on touch */
+  @media (hover: none) {
+    .dropdownContainer:hover .dropdownMenu { display: none; }
+  }
+
+  /* CTAs: centered & full-width within the lane */
+  .brochureBtn,
+  .quoteBtn {
+    display: block;
+    width: 100%;
+    max-width: 560px;          /* matches .navItem lane */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 16px;
+    border-radius: 12px;
+    margin: 6px 0;             /* no weird side margins; centered by parent */
+  }
+
+  .brochureBtn {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+  }
+  .quoteBtn {
+    background: #f0a500;
+    color: #0b1a3a;
+    border: 0;
+  }
+}
+
+/* === Mobile CTA centering override === */
+@media (max-width: 900px) {
+  /* Center the lane the items sit in */
+  .navLinks {
+    align-items: center;          /* center children horizontally */
+    padding-left: 16px;           /* keep even gutters */
+    padding-right: 16px;
+  }
+
+  /* Make each <li> center its child */
+  .navItem {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Center the buttons and give them a contained width (not 100%) */
+  .brochureBtn,
+  .quoteBtn {
+    width: clamp(240px, 88vw, 560px);   /* responsive width, centered */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+}
+/* Tagline beside logo */
+.tagline {
+  color: #ffffff;
+  font-weight: 600;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+/* Desktop: larger tagline */
+@media (min-width: 901px) {
+  .tagline {
+    font-size: 1.1rem;   /* ~17-18px */
+  }
+}
+
+/* Mobile: slightly smaller to fit */
+@media (max-width: 900px) {
+  .tagline {
+    font-size: 0.9rem;   /* ~14-15px */
+    display: inline-block;
+  }
+}

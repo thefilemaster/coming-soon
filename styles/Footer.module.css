@@ -1,0 +1,185 @@
+.footer {
+  background: #003087;          /* deep brand blue tone */
+  color: #e6ecff;                 /* soft text on dark */
+  padding-top: 36px;/* brand accent */
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 8px 20px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1.1fr 1fr 1fr 1.2fr;
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Brand column */
+.brandCol { }
+.brandRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo {
+  display: block;
+  height: auto;
+}
+.tagline {
+  margin: 10px 0 12px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #cfe0ff;
+}
+
+/* Best Price badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 12.5px;
+  color: #fff;
+  background: linear-gradient(90deg, #003087, #274b8f);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 6px 10px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #ffd700; /* gold dot */
+}
+
+/* Column titles */
+.colTitle {
+  margin: 4px 0 10px;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* Links */
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.linkList li {
+  margin: 8px 0;
+}
+.linkList a {
+  color: #d7e3ff;
+  text-decoration: none;
+  font-size: 14.5px;
+  transition: color .18s ease, transform .18s ease;
+}
+.linkList a:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+/* Contact */
+.contactCol { }
+.contactRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14.5px;
+  padding: 8px 0;
+  transition: opacity .18s ease, transform .18s ease;
+}
+.contactRow:hover {
+  opacity: .95;
+  transform: translateX(2px);
+}
+.icon {
+  color: #ffffff;
+}
+
+/* Small CTAs */
+.miniCtaRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.miniBtn,
+.miniBtnAlt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+}
+.miniBtn {
+  background: #003087;
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(0,48,135,0.35);
+}
+.miniBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0,48,135,0.5);
+}
+.miniBtnAlt {
+  background: rgba(255,255,255,0.08);
+  color: #e6ecff;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.miniBtnAlt:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.12);
+}
+
+/* Bottom bar */
+.bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  margin-top: 20px;
+  padding: 12px 20px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  color: #cfe0ff;
+  font-size: 13.5px;
+}
+.bottomLinks {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.bottomLinks a {
+  color: #d7e3ff;
+  text-decoration: none;
+}
+.bottomLinks a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .bottom {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,131 @@
+/* Cards used in the finish grid */
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, outline-color 0.2s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(16, 24, 40, 0.12);
+}
+
+.cardActive {
+  outline: 2px solid #003087;
+  box-shadow: 0 14px 28px rgba(0, 48, 135, 0.18);
+}
+
+.cardImageWrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+.cardBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 48, 135, 0.9);
+  color: #fff;
+  font-size: 0.72rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.cardBody {
+  padding: 14px 16px 16px;
+}
+
+.cardTitle {
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.01em;
+}
+
+.cardSubtitle {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+/* Features under the blurb */
+.featureList {
+  margin-top: 10px;
+  color: #334155;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  display: grid;
+  gap: 4px;
+}
+
+.featureItem {
+  position: relative;
+  padding-left: 18px;
+}
+
+.featureItem::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: #003087;
+}
+
+/* Thumbnails if you reuse elsewhere */
+.thumbnailRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.thumbnail {
+  width: 64px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.activeThumbnail {
+  outline: 2px solid #003087;
+}
+
+/* Motion safety */
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+  .card:hover { transform: none; box-shadow: none; }
+}
+
+/* Longer description shown only for the selected finish card */
+.cardDetails {
+  margin-top: 10px;
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Mobile image height a bit taller for better touch targets */
+@media (max-width: 640px) {
+  .cardImageWrap { height: 200px; }
+}

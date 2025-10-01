@@ -1,103 +1,124 @@
-import Image from "next/image";
+// app/page.js
+import Navbar from "@/components/Navbar";
+import HeroBanner from "@/components/HeroBanner";
+import ProductCard from "@/components/ProductCard";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import styles from "@/styles/Home.module.css";
+
+const products = [
+  {
+    title: "Files",
+    image: "/files/Hospital File - 1.jpg",
+    link: "/products/files",
+  },
+  {
+    title: "X Rays & MRI Scan Cover",
+    image: "/product-images/xray-mri.jpg", // ensure this exists
+    link: "/products/xray-mri",
+  },
+  {
+    title: "Envelopes",
+    image: "/product-images/envelopes.jpg",
+    link: "/products/envelopes",
+  },
+  {
+    title: "Visiting Cards",
+    image: "/product-images/visiting-cards.jpg",
+    link: "/products/visiting-cards",
+  },
+  {
+    title: "Letter Heads",
+    image: "/product-images/letterheads.jpg",
+    link: "/products/letterheads",
+  },
+  {
+    title: "Prescription Pads",
+    image: "/product-images/prescription-pads.jpg",
+    link: "/products/prescription-pads",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className={styles.homeContainer}>
+      <Navbar />
+      <HeroBanner />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+      {/* Our Products */}
+      <section className={styles.productsSection}>
+        <div className={styles.productsInner}>
+          <h2 className={styles.sectionTitle}>Our Products</h2>
+
+          <div className={styles.productGrid}>
+            {products.map((p, index) => (
+              <div className={styles.productGridItem} key={index}>
+                <ProductCard {...p} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaInner}>
+          <h3 className={styles.ctaHeading}>
+            Looking for Custom Hospital Printing?
+          </h3>
+          <p className={styles.ctaText}>
+            Files, Envelopes, Cards, and More — All Branded for Your Hospital at
+            the lowest market prices.
+          </p>
+          <a href="/quote" className={styles.quoteButton}>
+            Request a Quote
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+{/* USP + FAQ Section */}
+<section className={styles.uspSection}>
+  <div className={styles.uspContainer}>
+    <h2 className={styles.uspTitle}>Why Choose The File Master?</h2>
+    <div className={styles.uspGrid}>
+      <div className={styles.uspCard}>
+        <h3>💰 Lowest Market Prices</h3>
+        <p>We guarantee the best prices for hospital files, covers, envelopes, and stationery without compromising on quality.</p>
+      </div>
+      <div className={styles.uspCard}>
+        <h3>⚡ Fast Turnaround</h3>
+        <p>Get your printing orders delivered quickly and reliably — designed to meet urgent hospital requirements.</p>
+      </div>
+      <div className={styles.uspCard}>
+        <h3>🎨 Customization</h3>
+        <p>From custom sizes to personalized branding, we tailor every product to suit your hospital’s needs.</p>
+      </div>
+      <div className={styles.uspCard}>
+        <h3>🏥 Trusted by Hospitals</h3>
+        <p>We are the go-to printing partner for hospitals and clinics across India, ensuring professional results every time.</p>
+      </div>
+    </div>
+  </div>
+
+  {/* FAQ */}
+  <div className={styles.faqContainer}>
+    <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
+    <div className={styles.faqItem}>
+      <h4>Do you deliver across India?</h4>
+      <p>Yes, we ship to hospitals and clinics anywhere in India with safe packaging.</p>
+    </div>
+    <div className={styles.faqItem}>
+      <h4>Can I customize the size of files?</h4>
+      <p>Absolutely! We offer customized sizes to suit your specific document handling needs.</p>
+    </div>
+    <div className={styles.faqItem}>
+      <h4>Can I order in small quantities?</h4>
+      <p>Yes! We keep our minimum order quantity flexible (starting at just 100 pieces) so even small clinics and diagnostic centers can afford professional, branded stationery without overstocking.</p>
+    </div>
+  </div>
+</section>
+      <WhatsAppButton />
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,244 @@
+/* Page wrapper */
+.homeContainer {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* =========================
+   Hero Banner (existing)
+   ========================= */
+.hero {
+  background: linear-gradient(to right, #f0f4ff, #ffffff);
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #003087;
+  margin-bottom: 20px;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.heroButton {
+  display: inline-block;
+  background-color: #003087;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.heroButton:hover {
+  background-color: #0052cc;
+}
+
+/* =========================
+   Our Products
+   ========================= */
+.productsSection {
+  padding: 40px 20px;
+  background-color: #ffffff; /* slight lift from page bg */
+}
+
+.productsInner {
+  max-width: 1200px;           /* ensures grid is centered */
+  margin: 0 auto;              /* center the whole block */
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 28px;
+}
+
+/* Grid centered + consistent card width */
+.productGrid {
+  display: grid;
+  gap: 24px;
+  justify-content: center;     /* center the grid when there are few items */
+  grid-template-columns: repeat(1, minmax(260px, 1fr));
+}
+
+/* 2 cols on small/medium, 3 on large */
+@media (min-width: 640px) {
+  .productGrid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .productGrid {
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+  }
+}
+
+/* Each grid item wraps the ProductCard to standardize width & add hover polish */
+.productGridItem {
+  max-width: 360px;            /* keeps cards from stretching too wide */
+  width: 100%;
+  margin: 0 auto;              /* center each item within its grid cell */
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.productGridItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   CTA (Request a Quote)
+   ========================= */
+.ctaSection {
+  background: #003087;
+  color: #fff;
+  padding: 56px 20px;
+  margin-top: 56px;
+}
+
+.ctaInner {
+  max-width: 980px;            /* centers and limits content width */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaHeading {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.ctaText {
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+  line-height: 1.65;
+  opacity: 0.98;
+}
+
+.quoteButton {
+  display: inline-block;
+  background: #ffffff;
+  color: #003087;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+}
+.quoteButton:hover {
+  background: #ffd700;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.25);
+}
+
+/* Small screens spacing */
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+  .ctaHeading {
+    font-size: 1.6rem;
+  }
+  .ctaText {
+    font-size: 0.98rem;
+  }
+}
+
+/* USP Section */
+.uspSection {
+  background-color: #fff;
+  padding: 60px 20px;
+}
+
+.uspContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.uspTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003087;
+  margin-bottom: 40px;
+}
+
+.uspGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.uspCard {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.uspCard:hover {
+  transform: translateY(-5px);
+}
+
+.uspCard h3 {
+  color: #003087;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.uspCard p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* FAQ Section */
+.faqContainer {
+  max-width: 900px;
+  margin: 60px auto 0;
+  text-align: left;
+}
+
+.faqTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #003087;
+  margin-bottom: 30px;
+}
+
+.faqItem {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.faqItem h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #003087;
+  margin-bottom: 8px;
+}
+
+.faqItem p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
